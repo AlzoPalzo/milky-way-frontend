@@ -1,3 +1,8 @@
+#root {
+  background-image: url("images/stars.png");
+  background-color: black;
+}
+
 .App {
   text-align: center;
 }
