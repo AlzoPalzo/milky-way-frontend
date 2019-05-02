@@ -1,26 +1,53 @@
 import React, { Component } from 'react';
 
 import SolarSystem from './SolarSystem'
+import NavBar from './NavBar'
 
 class Galaxy extends Component {
 
     state = {
-        clicked: false
+        showSolarSystem: false,
+        showPlanet: false,
     }
 
     handleGalaxyClick = () =>
     {
         this.setState({
-            clicked: true
+            showSolarSystem: true
+        })
+    }
+
+
+    goToPlanetView = () =>
+    {
+        this.setState({
+            showPlanet: true
+        })
+    }
+
+    returnToSolarSystem = () => {
+        this.setState({
+            showPlanet: false
+        })
+    }
+
+    returnToGalaxy = () =>
+    {
+        this.setState({
+            showSolarSystem: false,
+            showPlanet: false,
         })
     }
 
     render() {
+        const {showPlanet} = this.state
         return (
-            <div onClick={ this.handleGalaxyClick }>
-                {!this.state.clicked
-                ? "I'm a galaxy"
-                : <SolarSystem />
+            <div >
+                <NavBar />
+                <br/>
+                {!this.state.showSolarSystem
+                    ? <img onClick={ this.handleGalaxyClick } src={require('../images/sun.png')} />
+                    : <SolarSystem showPlanet={showPlanet} goToPlanetView={this.goToPlanetView}/>
                 }
             </div>
         );
