@@ -21,8 +21,19 @@ class Galaxy extends Component {
     goToPlanetView = () =>
     {
         this.setState({
+            showSolarSystem: true,
             showPlanet: true
         })
+    }
+
+    goToSolarSystem = () =>
+    {
+        this.setState(
+            {
+                showSolarSystem: true,
+                showPlanet: false
+            }
+        )
     }
 
     returnToSolarSystem = () => {
@@ -43,11 +54,11 @@ class Galaxy extends Component {
         const {showPlanet} = this.state
         return (
             <div >
-                <NavBar />
+                <NavBar returnToGalaxy={this.returnToGalaxy} goToSolarSystem={this.goToSolarSystem} goToPlanetView={this.goToPlanetView}/>
                 <br/>
                 {!this.state.showSolarSystem
                     ? <img onClick={ this.handleGalaxyClick } src={require('../images/sun.png')} />
-                    : <SolarSystem showPlanet={showPlanet} goToPlanetView={this.goToPlanetView}/>
+                    : <SolarSystem showPlanet={showPlanet} goToPlanetView={this.goToPlanetView} returnToSolarSystem={this.returnToSolarSystem}/>
                 }
             </div>
         );
