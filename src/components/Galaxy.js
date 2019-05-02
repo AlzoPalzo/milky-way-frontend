@@ -57,7 +57,7 @@ class Galaxy extends Component {
                 <NavBar returnToGalaxy={this.returnToGalaxy} goToSolarSystem={this.goToSolarSystem} goToPlanetView={this.goToPlanetView}/>
                 <br/>
                 {!this.state.showSolarSystem
-                    ? <img onClick={ this.handleGalaxyClick } src={require('../images/sun.png')} />
+                    ? <img onClick={ this.handleGalaxyClick } src={require('../images/galaxy2.png')} />
                     : <SolarSystem showPlanet={showPlanet} goToPlanetView={this.goToPlanetView} returnToSolarSystem={this.returnToSolarSystem}/>
                 }
             </div>
