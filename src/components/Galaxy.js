@@ -5,38 +5,64 @@ import NavBar from './NavBar'
 
 class Galaxy extends Component {
 
-  state = {
-    showSolarSystem: false,
-    showPlanet: false
-  }
+    state = {
+        showSolarSystem: false,
+        showPlanet: false,
+    }
 
-  handleGalaxyClick = () => {
-    this.setState({showSolarSystem: true})
-  }
+    handleGalaxyClick = () =>
+    {
+        this.setState({
+            showSolarSystem: true
+        })
+    }
 
-  goToPlanetView = () => {
-    this.setState({showPlanet: true})
-  }
 
-  returnToSolarSystem = () => {
-    this.setState({showPlanet: false})
-  }
+    goToPlanetView = () =>
+    {
+        this.setState({
+            showSolarSystem: true,
+            showPlanet: true
+        })
+    }
 
-  returnToGalaxy = () => {
-    this.setState({showSolarSystem: false, showPlanet: false})
-  }
+    goToSolarSystem = () =>
+    {
+        this.setState(
+            {
+                showSolarSystem: true,
+                showPlanet: false
+            }
+        )
+    }
 
-  render() {
-    const {showPlanet} = this.state
-    return (<div >
-      <NavBar/>
-      <br/> {
-        !this.state.showSolarSystem
-          ? <img onClick={this.handleGalaxyClick} src={require('../images/sun.png')}/>
-          : <SolarSystem showPlanet={showPlanet} goToPlanetView={this.goToPlanetView}/>
-      }
-    </div>);
-  }
+    returnToSolarSystem = () => {
+        this.setState({
+            showPlanet: false
+        })
+    }
+
+    returnToGalaxy = () =>
+    {
+        this.setState({
+            showSolarSystem: false,
+            showPlanet: false,
+        })
+    }
+
+    render() {
+        const {showPlanet} = this.state
+        return (
+            <div >
+                <NavBar returnToGalaxy={this.returnToGalaxy} goToSolarSystem={this.goToSolarSystem} goToPlanetView={this.goToPlanetView}/>
+                <br/>
+                {!this.state.showSolarSystem
+                    ? <img onClick={ this.handleGalaxyClick } src={require('../images/sun.png')} />
+                    : <SolarSystem showPlanet={showPlanet} goToPlanetView={this.goToPlanetView} returnToSolarSystem={this.returnToSolarSystem}/>
+                }
+            </div>
+        );
+    }
 }
 
 export default Galaxy;

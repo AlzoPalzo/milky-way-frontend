@@ -5,7 +5,7 @@ import Planet from './Planet'
 class SolarSystem extends Component {
 
     state = {
-        selectedPlanet: ''
+        selectedPlanet: 'mercury'
     }
 
     handlePlanetClick = (e) =>
@@ -24,7 +24,8 @@ class SolarSystem extends Component {
             <div>
                 {
                     this.props.showPlanet
-                    ?<Planet returnToSolarSystem={this.returnToSolarSystem} selectedPlanet={selectedPlanet}/>
+
+                    ?<Planet returnToSolarSystem={this.props.returnToSolarSystem} selectedPlanet={selectedPlanet}/>
                     :<div className={'solar-system'}>
                         <img onClick={this.handlePlanetClick} className={'sun'} src={require('../images/sun.png')}/>
                         <img onClick={this.handlePlanetClick} className={'mercury'} src={require('../images/mercury.png')}/>
@@ -33,8 +34,8 @@ class SolarSystem extends Component {
                         <img onClick={this.handlePlanetClick} className={'mars'} src={require('../images/mars.png')}/>
                         <img onClick={this.handlePlanetClick} className={'jupiter'} src={require('../images/jupiter.png')}/>
                         <img onClick={this.handlePlanetClick} className={'saturn'} src={require('../images/saturn.png')}/>
-                        <img onClick={this.handlePlanetClick} className={'neptune'} src={require('../images/uranus.png')}/>
-                        <img onClick={this.handlePlanetClick} className={'uranus'} src={require('../images/neptune.png')}/>
+                        <img onClick={this.handlePlanetClick} className={'uranus'} src={require('../images/uranus.png')}/>
+                        <img onClick={this.handlePlanetClick} className={'neptune'} src={require('../images/neptune.png')}/>
                     </div>
                 }
             </div>
