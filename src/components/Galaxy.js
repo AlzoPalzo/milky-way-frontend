@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 import SolarSystem from './SolarSystem'
 import NavBar from './NavBar'

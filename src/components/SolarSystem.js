@@ -24,6 +24,7 @@ class SolarSystem extends Component {
             <div>
                 {
                     this.props.showPlanet
+
                     ?<Planet returnToSolarSystem={this.props.returnToSolarSystem} selectedPlanet={selectedPlanet}/>
                     :<div className={'solar-system'}>
                         <img onClick={this.handlePlanetClick} className={'sun'} src={require('../images/sun.png')}/>
