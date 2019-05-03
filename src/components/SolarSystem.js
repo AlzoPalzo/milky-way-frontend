@@ -14,7 +14,7 @@ class SolarSystem extends Component {
   }
 
   render() {
-    const {systemView, selectedPlanet} = this.state
+    const {selectedPlanet} = this.state
 
     return (<div>
       {
