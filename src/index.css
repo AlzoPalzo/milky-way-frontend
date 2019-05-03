@@ -42,7 +42,7 @@ body {
   border-radius: 0.5rem;
 }
 
-.sun {
+.Sun {
   margin-left: -600px;
   cursor: pointer;
 }
@@ -56,36 +56,48 @@ body {
   cursor: pointer;
 }
 
-.planet:hover, .sun:hover, #MilkyWay:hover {
+#solarTitle {
+  color: white;
+  font-size: 35px;
+  margin-top: 2rem;
+}
+
+.solar-system {
+  margin-top: -7rem !important;
+}
+
+.planet:hover, .Sun:hover, #MilkyWay:hover {
   opacity: 0.8
 }
 
-.mercury {}
+.Mercury {
+  margin-left: 140%
+}
 
-.venus {
+.Venus {
   width: 141%;
   margin-left: 50%;
 }
 
-.earth {}
+.Earth {}
 
-.mars {
+.Mars {
   width: 80%;
   margin-left: -100%;
 }
 
-.jupiter {
+.Jupiter {
   width: 200%;
   margin-left: -100%;
 }
 
-.saturn {
+.Saturn {
   width: 335%;
   margin-left: -108%;
 }
 
-.uranus {
+.Uranus {
   margin-left: 66%;
 }
 
-.neptune {}
+.Neptune {}
