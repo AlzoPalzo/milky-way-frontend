@@ -8,9 +8,30 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+* {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+#navbar {
+  margin: 0px;
+  background-color: transparent;
+  text-align: center;
+
+  height: 100px;
+}
+
+#logo {
+  width: 70%;
+}
+
+#buttoon {
+  padding-top: 0px !important
+}
+
+.white {
+  background-color: #f1f1f1 !important;
+  margin-left: 10px !important;
+  margin-right: 10px !important;
 }
 
 #MilkyWay {
@@ -18,12 +39,21 @@ code {
 }
 
 .sun {
-  margin-left: -685px;
-  width: 1010px
+  margin-left: -600px;
+  cursor: pointer;
 }
 
 .planet {
-  width: 100%
+  width: 100%;
+  cursor: pointer;
+}
+
+#MilkyWay {
+  cursor: pointer;
+}
+
+.planet:hover, .sun:hover, #MilkyWay:hover {
+  opacity: 0.8
 }
 
 .mercury {}
