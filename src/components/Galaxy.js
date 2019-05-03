@@ -7,7 +7,8 @@ class Galaxy extends Component {
 
   state = {
     showSolarSystem: false,
-    showPlanet: false
+    showPlanet: false,
+    planets: []
   }
 
   handleGalaxyClick = () => {
@@ -28,6 +29,18 @@ class Galaxy extends Component {
 
   returnToGalaxy = () => {
     this.setState({showSolarSystem: false, showPlanet: false})
+  }
+
+  componentDidMount(){
+      fetch("http://localhost:4000/planets")
+        .then(resp => resp.json())
+        .then(planets => this.setState({ planets: planets }));
+      fetch("http://localhost:4000/moons")
+        .then(resp => resp.json())
+        .then(moons => this.setState({ moons: moons }));
+      fetch("http://localhost:4000/solar_systems")
+        .then(resp => resp.json())
+        .then(solar_systems => this.setState({ solar_systems: solar_systems }));      
   }
 
   render() {
