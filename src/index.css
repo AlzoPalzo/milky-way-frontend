@@ -14,5 +14,44 @@ code {
 }
 
 #MilkyWay {
-  width:45%
+  width: 45%
 }
+
+.sun {
+  margin-left: -685px;
+  width: 1010px
+}
+
+.planet {
+  width: 100%
+}
+
+.mercury {}
+
+.venus {
+  width: 141%;
+  margin-left: 50%;
+}
+
+.earth {}
+
+.mars {
+  width: 80%;
+  margin-left: -100%;
+}
+
+.jupiter {
+  width: 200%;
+  margin-left: -100%;
+}
+
+.saturn {
+  width: 335%;
+  margin-left: -108%;
+}
+
+.uranus {
+  margin-left: 66%;
+}
+
+.neptune {}
