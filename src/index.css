@@ -8,54 +8,98 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+* {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+#navbar {
+  margin: 0px;
+  background-color: transparent;
+  text-align: center;
+
+  height: 100px;
+}
+
+#logo {
+  width: 70%;
+}
+
+.noTopPad {
+  padding-top: 0px !important
+}
+
+.white {
+  background-color: #f1f1f1 !important;
+  margin-left: 10px !important;
+  margin-right: 10px !important;
 }
 
 #MilkyWay {
   width: 45%
 }
 
-.sun {
-  margin-left: -685px;
-  width: 1010px
+#search {
+  border-radius: 0.5rem;
+}
+
+.Sun {
+  margin-left: -600px;
+  cursor: pointer;
 }
 
 .planet {
-  width: 100%
+  width: 100%;
+  cursor: pointer;
 }
 
-.mercury {}
+#MilkyWay {
+  cursor: pointer;
+}
 
-.venus {
+#solarTitle {
+  color: white;
+  font-size: 35px;
+  margin-top: 2rem;
+}
+
+.solar-system {
+  margin-top: -7rem !important;
+}
+
+.planet:hover, .Sun:hover, #MilkyWay:hover {
+  opacity: 0.8
+}
+
+.Mercury {
+  margin-left: 140%
+}
+
+.Venus {
   width: 141%;
   margin-left: 50%;
 }
 
-.earth {}
+.Earth {}
 
-.mars {
+.Mars {
   width: 80%;
   margin-left: -100%;
 }
 
-.jupiter {
+.Jupiter {
   width: 200%;
   margin-left: -100%;
 }
 
-.saturn {
+.Saturn {
   width: 335%;
   margin-left: -108%;
 }
 
-.uranus {
+.Uranus {
   margin-left: 66%;
 }
 
 .moon-image {
   width: 15%;
 }
-
-.neptune {}
