@@ -24,7 +24,7 @@ body {
   width: 70%;
 }
 
-#buttoon {
+.noTopPad {
   padding-top: 0px !important
 }
 
@@ -36,6 +36,10 @@ body {
 
 #MilkyWay {
   width: 45%
+}
+
+#search {
+  border-radius: 0.5rem;
 }
 
 .sun {
