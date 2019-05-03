@@ -5,7 +5,7 @@ import Planet from './Planet'
 class SolarSystem extends Component {
 
   state = {
-    selectedPlanet: 'mercury',
+    selectedPlanet: 'Mercury',
     title: 'The Solar System'
   }
 
