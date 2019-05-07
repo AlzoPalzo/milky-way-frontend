@@ -40,17 +40,17 @@ class Galaxy extends Component {
         .then(moons => this.setState({ moons: moons }));
       fetch("http://localhost:4000/solar_systems")
         .then(resp => resp.json())
-        .then(solar_systems => this.setState({ solar_systems: solar_systems }));      
+        .then(solar_systems => this.setState({ solar_systems: solar_systems }));
   }
 
   render() {
-    const {showPlanet} = this.state
+    const {showPlanet, planets} = this.state
     return (<div >
       <NavBar returnToGalaxy={this.returnToGalaxy} goToSolarSystem={this.goToSolarSystem} goToPlanetView={this.goToPlanetView}/>
       <br/> {
         !this.state.showSolarSystem
           ? <img alt="Milky Way" id="MilkyWay" onClick={this.handleGalaxyClick} src={require('../images/galaxy2.png')}/>
-          : <SolarSystem showPlanet={showPlanet} goToPlanetView={this.goToPlanetView} returnToSolarSystem={this.returnToSolarSystem}/>
+        : <SolarSystem showPlanet={showPlanet} goToPlanetView={this.goToPlanetView} returnToSolarSystem={this.returnToSolarSystem} planets={planets}/>
       }
     </div>);
   }

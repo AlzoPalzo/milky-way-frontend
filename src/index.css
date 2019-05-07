@@ -43,7 +43,8 @@ body {
 }
 
 .Sun {
-  margin-left: -600px;
+  width:700px;
+  margin-left: -500px;
   cursor: pointer;
 }
 
@@ -59,11 +60,28 @@ body {
 #solarTitle {
   color: white;
   font-size: 35px;
-  margin-top: 2rem;
+  margin-top: 4rem;
+  margin-bottom: 0rem;
+}
+
+#infoBox {
+  color: white;
+  border: 3px solid white;
+  border-radius: 10px;
+  margin-top: -14rem;
+  padding: 20px;
+  font-weight: bold;
+  background-color: #005aff38;
+  padding-left:95px;
+}
+
+#infoTable {
+  text-align: left;
+  width: 100%;
 }
 
 .solar-system {
-  margin-top: -7rem !important;
+  margin-top: -10rem !important;
 }
 
 .planet:hover, .Sun:hover, #MilkyWay:hover {
