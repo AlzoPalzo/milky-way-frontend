@@ -10,6 +10,7 @@ body {
 
 * {
   font-family: 'Montserrat', sans-serif !important;
+  transition-duration: 0.4s;
 }
 
 #navbar {
@@ -35,7 +36,9 @@ body {
 }
 
 #MilkyWay {
-  width: 45%
+  width: 45%;
+  animation: pulse 5s infinite;
+  opacity: 0.8
 }
 
 #search {
@@ -45,7 +48,6 @@ body {
 .Sun {
   width:700px;
   margin-left: -500px;
-  cursor: pointer;
 }
 
 .planet {
@@ -84,8 +86,8 @@ body {
   margin-top: -10rem !important;
 }
 
-.planet:hover, .Sun:hover, #MilkyWay:hover {
-  opacity: 0.8
+.planet:hover {
+  animation: pulse 4s linear infinite;
 }
 
 .Mercury {
