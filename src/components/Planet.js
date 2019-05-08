@@ -13,7 +13,7 @@ class Planet extends Component {
       <img alt="Planet" className={selectedPlanet} src={require(`../images/${this.props.selectedPlanet}.png`)}/> {this.props.moons.map(moon => <Moon moon={moon}/>)}
 
       <br/>
-      <button onClick={this.props.returnToSolarSystem}>Back to Solar System view</button>
+      <button onClick={returnToSolarSystem}>Back to Solar System view</button>
     </React.Fragment>);
   }
 }
