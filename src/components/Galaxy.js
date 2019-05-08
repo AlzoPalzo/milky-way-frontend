@@ -8,7 +8,8 @@ class Galaxy extends Component {
   state = {
     showSolarSystem: false,
     showPlanet: false,
-    planets: []
+    planets: [],
+    moons: []
   }
 
   handleGalaxyClick = () => {
@@ -31,26 +32,20 @@ class Galaxy extends Component {
     this.setState({showSolarSystem: false, showPlanet: false})
   }
 
-  componentDidMount(){
-      fetch("http://localhost:4000/planets")
-        .then(resp => resp.json())
-        .then(planets => this.setState({ planets: planets }));
-      fetch("http://localhost:4000/moons")
-        .then(resp => resp.json())
-        .then(moons => this.setState({ moons: moons }));
-      fetch("http://localhost:4000/solar_systems")
-        .then(resp => resp.json())
-        .then(solar_systems => this.setState({ solar_systems: solar_systems }));
+  componentDidMount() {
+    fetch("http://localhost:4000/planets").then(resp => resp.json()).then(planets => this.setState({planets: planets}));
+    fetch("http://localhost:4000/moons").then(resp => resp.json()).then(moons => this.setState({moons: moons}));
+    fetch("http://localhost:4000/solar_systems").then(resp => resp.json()).then(solar_systems => this.setState({solar_systems: solar_systems}));
   }
 
   render() {
-    const {showPlanet, planets} = this.state
+    const {showPlanet, planets, moons} = this.state
     return (<div >
       <NavBar returnToGalaxy={this.returnToGalaxy} goToSolarSystem={this.goToSolarSystem} goToPlanetView={this.goToPlanetView}/>
       <br/> {
         !this.state.showSolarSystem
           ? <img alt="Milky Way" id="MilkyWay" onClick={this.handleGalaxyClick} src={require('../images/galaxy2.png')}/>
-        : <SolarSystem showPlanet={showPlanet} goToPlanetView={this.goToPlanetView} returnToSolarSystem={this.returnToSolarSystem} planets={planets}/>
+          : <SolarSystem showPlanet={showPlanet} goToPlanetView={this.goToPlanetView} returnToSolarSystem={this.returnToSolarSystem} planets={planets} moons={moons}/>
       }
     </div>);
   }

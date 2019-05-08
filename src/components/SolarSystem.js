@@ -27,10 +27,10 @@ class SolarSystem extends Component {
       {
         this.props.showPlanet
 
-          ? <Planet returnToSolarSystem={this.props.returnToSolarSystem} selectedPlanet={selectedPlanet}/>
+          ? <Planet returnToSolarSystem={this.props.returnToSolarSystem} selectedPlanet={selectedPlanet} moons={this.planetMoons()} />
           : <React.Fragment>
               <h1 id="solarTitle">{this.state.viewPlanet}</h1>
-              <div className='solar-system ui middle aligned grid' onMouseEnter={this.revertPlanet}>
+              <div className='solar-system ui middle aligned grid'>
                 <div className='one wide column'><img alt="The Sun" onMouseEnter={this.changePlanet} className={'The Sun'} src={require('../images/Sun.png')}/></div>
                 <div className='one wide column'><img alt="Mercury" onClick={this.handlePlanetClick} onMouseEnter={this.handleMouseEnter} className={'planet Mercury'} src={require('../images/Mercury.png')}/></div>
                 <div className='one wide column'></div>
@@ -138,8 +138,9 @@ class SolarSystem extends Component {
 
   }
 
-  revertPlanet = (e) => {
-    this.setState({viewPlanet: 'The Solar System'})
+  planetMoons = () => {
+    const selectedPlanet = this.props.planets.find(planet => planet.name === this.state.selectedPlanet)
+    return this.props.moons.filter(moon => moon.planet_id === selectedPlanet.id)
   }
 
 }
