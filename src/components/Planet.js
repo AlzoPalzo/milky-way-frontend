@@ -22,7 +22,10 @@ class Planet extends Component {
     }
 
 
-    const {returnToSolarSystem, selectedPlanet} = this.props
+
+<img alt="Planet" id={selectedPlanet} src={require(`../images/${this.props.selectedPlanet}.png`)}/> {this.props.moons.map(moon => <Moon moon={moon}/>)}
+
+const {returnToSolarSystem, selectedPlanet} = this.props
 
     return (<div className='ui middle aligned grid'>
       <div className='sixteen wide column'>
