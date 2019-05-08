@@ -51,7 +51,8 @@ body {
 }
 
 .planet {
-  width: 100%;
+  width: 200px;
+  height: 200px;
   cursor: pointer;
 }
 
@@ -91,35 +92,46 @@ body {
 }
 
 .Mercury {
-  margin-left: 140%
+
 }
 
 .Venus {
-  width: 141%;
-  margin-left: 50%;
+  margin-left: -47%;
 }
 
-.Earth {}
+.Earth {
+  margin-left: -101%;
+}
 
 .Mars {
-  width: 80%;
-  margin-left: -100%;
+  margin-left: -182%;
 }
 
 .Jupiter {
-  width: 200%;
-  margin-left: -100%;
+  margin-left: -274%;
 }
 
 .Saturn {
-  width: 335%;
-  margin-left: -108%;
+  margin-left: -265%;
+  width:500px;
+}
+#Saturn {
+  width:100% !important;
 }
 
 .Uranus {
-  margin-left: 66%;
+  margin-left: -42%;
+  height:420px;
+}
+#Uranus {
+  width:25% !important;
+}
+
+.Neptune{
+  margin-left: -100%;
 }
 
 .moon-image {
   width: 15%;
+  height: 20%;
 }

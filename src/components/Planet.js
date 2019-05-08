@@ -5,16 +5,33 @@ import Moon from './Moon'
 class Planet extends Component {
 
   render() {
+    const planetStyle = {
+      width: '50%'
+    }
+    const flexBox = {
+      display: 'flex',
+      flexWrap: 'wrap',
+      flexDirection: 'row',
+      justifyContent: 'center'
+    }
+
+
     const {returnToSolarSystem, selectedPlanet} = this.props
 
-    return (<React.Fragment>
-      <h1>{selectedPlanet.charAt(0).toUpperCase() + selectedPlanet.slice(1)}</h1>
-
-      <img alt="Planet" className={selectedPlanet} src={require(`../images/${this.props.selectedPlanet}.png`)}/> {this.props.moons.map(moon => <Moon moon={moon}/>)}
-
-      <br/>
+    return (<div className='ui middle aligned grid'>
+      <div className='sixteen wide column'>
+        <h1 id="solarTitle">{selectedPlanet.charAt(0).toUpperCase() + selectedPlanet.slice(1)}</h1>
+      </div>
+      <div className='eight wide column'>
+        <img alt="Planet" id={selectedPlanet} style={planetStyle} src={require(`../images/${this.props.selectedPlanet}.png`)}/>
+      </div>
+      <div className='eight wide column'>
+        <div style={flexBox}>
+          {this.props.moons.map(moon => <Moon key={moon.id} moon={moon}/>)}
+        </div>
+      </div>
       <button onClick={returnToSolarSystem}>Back to Solar System view</button>
-    </React.Fragment>);
+    </div>);
   }
 }
 
