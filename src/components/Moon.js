@@ -15,7 +15,7 @@ class Moon extends Component {
   }
 
   render() {
-    return (<img className='moon-image' alt="moon" src={require('../images/moons/Earth/theMoon.png')} onMouseEnter={this.displayInfo} onMouseLeave={this.hideInfo}/>)
+    return (<img className='moon-image' alt="moon" src={require(`../images/moons/${this.props.planet}/${this.props.moon.name.toLowerCase()}.png`)} onMouseEnter={this.displayInfo} onMouseLeave={this.hideInfo}/>)
   }
 }
 
