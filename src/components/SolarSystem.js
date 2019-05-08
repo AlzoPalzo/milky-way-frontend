@@ -50,7 +50,7 @@ class SolarSystem extends Component {
 
                 <div className='six wide column'></div>
                 <div className='four wide column'>
-                  <div id='infoBox'>
+                  <div className='infoBox'>
                     <table id='infoTable'>
                       <tbody>
                         <tr>

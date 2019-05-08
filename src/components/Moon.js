@@ -15,27 +15,23 @@ class Moon extends Component {
   }
 
   render() {
-    const style = this.state.showInfo
-      ? {}
-      : {
-        display: 'none'
-      }
-
-    return (<div className='moon'>
-
-      <img className='moon-image' alt="moon" src={require('../images/moons/theMoon.png')} onMouseEnter={this.displayInfo} onMouseLeave={this.hideInfo}/>
-
-      <div className={'ui card'} style={style}>
-        <div className='content'>
-          <div className='header'>The Moon</div>
-          <div className='description'>
-            This is a Moon</div>
-        </div>
-      </div>
-
-
-    </div>);
+    return (<img className='moon-image' alt="moon" src={require('../images/moons/Earth/theMoon.png')} onMouseEnter={this.displayInfo} onMouseLeave={this.hideInfo}/>)
   }
 }
 
 export default Moon;
+// <div className={'ui card'} style={style}>
+//   <div className='content'>
+//     <div className='header'>The Moon</div>
+//     <div className='description'>
+//       This is a Moon</div>
+//   </div>
+// </div>
+
+
+
+// const style = this.state.showInfo
+// ? {}
+// : {
+//   display: 'none'
+// }

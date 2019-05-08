@@ -40,14 +40,14 @@ class Galaxy extends Component {
 
   render() {
     const {showPlanet, planets, moons} = this.state
-    return (<div >
+    return (<React.Fragment>
       <NavBar returnToGalaxy={this.returnToGalaxy} goToSolarSystem={this.goToSolarSystem} goToPlanetView={this.goToPlanetView}/>
       <br/> {
         !this.state.showSolarSystem
           ? <img alt="Milky Way" id="MilkyWay" onClick={this.handleGalaxyClick} src={require('../images/galaxy2.png')}/>
           : <SolarSystem showPlanet={showPlanet} goToPlanetView={this.goToPlanetView} returnToSolarSystem={this.returnToSolarSystem} planets={planets} moons={moons}/>
       }
-    </div>);
+    </React.Fragment>);
   }
 }
 
