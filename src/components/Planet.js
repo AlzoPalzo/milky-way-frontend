@@ -10,8 +10,7 @@ class Planet extends Component {
     return (<React.Fragment>
       <h1>{selectedPlanet.charAt(0).toUpperCase() + selectedPlanet.slice(1)}</h1>
 
-      <img alt="Selected Planet" className={selectedPlanet} src={require(`../images/${this.props.selectedPlanet}.png`)}/>
-      {this.props.moons.map(moon => <Moon moon={moon}/>)}
+      <img alt="Planet" className={selectedPlanet} src={require(`../images/${this.props.selectedPlanet}.png`)}/> {this.props.moons.map(moon => <Moon moon={moon}/>)}
 
       <br/>
       <button onClick={this.props.returnToSolarSystem}>Back to Solar System view</button>

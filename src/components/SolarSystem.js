@@ -27,7 +27,7 @@ class SolarSystem extends Component {
       {
         this.props.showPlanet
 
-          ? <Planet returnToSolarSystem={this.props.returnToSolarSystem} selectedPlanet={selectedPlanet} moons={this.planetMoons()} />
+          ? <Planet returnToSolarSystem={this.props.returnToSolarSystem} selectedPlanet={selectedPlanet} moons={this.planetMoons()}/>
           : <React.Fragment>
               <h1 id="solarTitle">{this.state.viewPlanet}</h1>
               <div className='solar-system ui middle aligned grid'>
@@ -59,35 +59,47 @@ class SolarSystem extends Component {
                         </tr>
                         <tr>
                           <td>Diameter</td>
-                          <td>{this.state.planetInfo.diameter} km</td>
+                          <td>{this.state.planetInfo.diameter}
+                            km</td>
                         </tr>
                         <tr>
                           <td>Mass</td>
-                          <td>{this.state.planetInfo.mass} Earths</td>
+                          <td>{this.state.planetInfo.mass}
+                            Earths</td>
                         </tr>
                         <tr>
                           <td>Length of Day</td>
-                          <td>{this.state.planetInfo.day_length} Hours</td>
+                          <td>{this.state.planetInfo.day_length}
+                            Hours</td>
                         </tr>
                         <tr>
                           <td>Gravity</td>
-                          <td>{this.state.planetInfo.gravity} m/s&#178;</td>
+                          <td>{this.state.planetInfo.gravity}
+                            m/s&#178;</td>
                         </tr>
                         <tr>
                           <td>Orbital Period</td>
-                          <td>{this.state.planetInfo.orbital_period} days</td>
+                          <td>{this.state.planetInfo.orbital_period}
+                            days</td>
                         </tr>
                         <tr>
                           <td>Atmospheres</td>
-                          <td>{this.state.planetInfo.atmosphere === -1 ? 'N/A' : this.state.planetInfo.atmosphere} atm(s)</td>
+                          <td>{
+                              this.state.planetInfo.atmosphere === -1
+                                ? 'N/A'
+                                : this.state.planetInfo.atmosphere
+                            }
+                            atm(s)</td>
                         </tr>
                         <tr>
                           <td>Sun Distance</td>
-                          <td>{this.state.planetInfo.sun_distance} million km</td>
+                          <td>{this.state.planetInfo.sun_distance}
+                            million km</td>
                         </tr>
                         <tr>
                           <td>Surface Temp</td>
-                          <td>{this.state.planetInfo.temperature} &#176;C</td>
+                          <td>{this.state.planetInfo.temperature}
+                            &#176;C</td>
                         </tr>
                       </tbody>
                     </table>
