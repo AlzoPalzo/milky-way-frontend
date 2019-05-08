@@ -22,9 +22,6 @@ class Planet extends Component {
     }
 
 
-
-<img alt="Planet" id={selectedPlanet} src={require(`../images/${this.props.selectedPlanet}.png`)}/> {this.props.moons.map(moon => <Moon moon={moon}/>)}
-
 const {returnToSolarSystem, selectedPlanet} = this.props
 
     return (<div className='ui middle aligned grid'>
@@ -41,7 +38,7 @@ const {returnToSolarSystem, selectedPlanet} = this.props
       </div>
       <div className='six wide column'>
         <div style={flexBox}>
-          {this.props.moons.map(moon => <Moon key={moon.id} moon={moon}/>)}
+          {this.props.moons.map(moon => <Moon key={moon.id} moon={moon} planet={selectedPlanet}/>)}
         </div>
       </div>
     </div>);
