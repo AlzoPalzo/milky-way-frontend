@@ -5,7 +5,7 @@ class NavBar extends Component {
     const {returnToGalaxy, goToSolarSystem, goToPlanetView} = this.props
     return (<div id="navbar" className="ui grid middle aligned">
       <div className="four wide column">
-        <img id="logo" src={require("../images/logo.png")}/>
+        <img alt='logo' id="logo" src={require("../images/logo.png")}/>
       </div>
       <div className="eight wide column" id="buttoon">
         <button className="ui button white" onClick={returnToGalaxy}>Galaxy View</button>
