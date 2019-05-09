@@ -4,6 +4,18 @@ import Moon from './Moon'
 
 class Planet extends Component {
 
+  state = {
+    current_Moon: "",
+    moonInfo:
+    {
+      name: this.props.selectedPlanet.name,
+      distance: "",
+      orbital_period: "",
+      diameter: "",
+
+    }
+  }
+
   render() {
     const planetStyle = {
       width: '50%'
@@ -22,7 +34,7 @@ class Planet extends Component {
     }
 
 
-const {returnToSolarSystem, selectedPlanet} = this.props
+const {returnToSolarSystem, selectedPlanet, moons} = this.props
 
     return (<div className='ui middle aligned grid'>
       <div className='sixteen wide column'>
@@ -33,12 +45,31 @@ const {returnToSolarSystem, selectedPlanet} = this.props
       </div>
       <div className='four wide column' style={paddingFifty}>
         <div className='infoBox' style={paddingLeft}>
-          I am the info box
+          {this.state.current_Moon === ""
+            ? <table id='infoTable'>
+                <tbody>
+                  <tr>
+                    <td>Name: </td> <td>{selectedPlanet}</td>
+                  </tr>
+                    {
+                      moons.length > 0
+                      ? <tr><td>Number of moons: </td> <td>{ moons.length }</td></tr>
+                      : <tr><td>This planet has no moons</td> </tr>
+                    }
+                    {
+                      moons.length > 0
+                      ? <tr><td>Average moon diameter: </td> <td>{ (moons.map(moon => moon.diameter).reduce((a, b) => a + b, 0 ) / moons.length).toFixed(2)}</td></tr>
+                      : null
+                    }
+                </tbody>
+              </table>
+            : <table id='infoTable'></table>
+          }
         </div>
       </div>
       <div className='six wide column'>
         <div style={flexBox}>
-          {this.props.moons.map(moon => <Moon key={moon.id} moon={moon} planet={selectedPlanet}/>)}
+          {moons.map(moon => <Moon key={moon.id} moon={moon} planet={selectedPlanet}/>)}
         </div>
       </div>
     </div>);
