@@ -46,7 +46,7 @@ class Planet extends Component {
                   moons.length > 0
                     ? <tbody>
                         <tr>
-                          <td>Name: </td> <td>{this.state.name}</td>
+                          <td>Name: </td> <td>{selectedPlanet}</td>
                         </tr>
                         <tr>
                           <td>Number of moons: </td> <td>{ moons.length }</td>
@@ -106,7 +106,7 @@ class Planet extends Component {
 
 
   componentDidMount() {
-    if (this.props.moon !== {})
+    if (this.props.moon.name)
     {
       this.setState({
         name: this.props.moon.name,
@@ -114,8 +114,8 @@ class Planet extends Component {
         orbital_period: this.props.moon.orbital_period,
         diameter: this.props.moon.diameter
       });
+      this.props.resetMoon()
     }
-    this.props.resetMoon()
   }
 
   resetStatBox = () =>
