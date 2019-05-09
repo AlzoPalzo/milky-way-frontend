@@ -17,7 +17,8 @@ class SolarSystem extends Component {
       orbital_period: 365,
       sun_distance: 149.6,
       temperature: 15
-    }
+    },
+    scale: false
   };
 
   search = () => {
@@ -70,11 +71,16 @@ class SolarSystem extends Component {
   };
 
   render() {
-    const { selectedPlanet } = this.state;
+    const { selectedPlanet, scale } = this.state;
 
 
     return (
       <React.Fragment>
+        <div className="ui toggle checkbox">
+          <input type="checkbox" name="public" onChange={this.scalePlanet} />
+          <label>SCALE UP MUFUKKA</label>
+        </div>
+
         {this.search()}
         {this.props.showPlanet ? (
           <Planet
@@ -89,29 +95,29 @@ class SolarSystem extends Component {
         ) : (
           <React.Fragment>
             <h1 className="solarTitle">{this.state.viewPlanet}</h1>
-             <div className='solar-system ui middle aligned grid'>
-                <div className='one wide column'><img alt="The Sun" onMouseEnter={this.changePlanet} className={'The Sun'} src={require('../images/Sun.png')}/></div>
-                <div className='one wide column'><img alt="Mercury" onClick={this.handlePlanetClick} onMouseEnter={this.handleMouseEnter} className={'planet Mercury'} src={require('../images/Mercury.png')}/></div>
+             <div className= {scale ? 'solar-system ui middle aligned grid SolarSystemScale' : 'solar-system ui middle aligned grid'}>
+                <div className='one wide column'><img alt="The Sun" onMouseEnter={this.changePlanet} className={scale ? 'The Sun SunScale' : 'The Sun'} src={require('../images/Sun.png')}/></div>
+                <div className='one wide column'><img alt="Mercury" onClick={this.handlePlanetClick} onMouseEnter={this.handleMouseEnter} className={scale ? 'planet Mercury MercuryScale' : 'planet Mercury'} src={require('../images/Mercury.png')}/></div>
                 <div className='one wide column'></div>
-                <div className='one wide column'><img alt="Venus" onClick={this.handlePlanetClick} onMouseEnter={this.handleMouseEnter} className={'planet Venus'} src={require('../images/Venus.png')}/></div>
+                <div className='one wide column'><img alt="Venus" onClick={this.handlePlanetClick} onMouseEnter={this.handleMouseEnter} className={scale ? 'planet Venus VenusScale' : 'planet Venus'} src={require('../images/Venus.png')}/></div>
                 <div className='one wide column'></div>
-                <div className='one wide column'><img alt="Earth" onClick={this.handlePlanetClick} onMouseEnter={this.handleMouseEnter} className={'planet Earth'} src={require('../images/Earth.png')}/></div>
+                <div className='one wide column'><img alt="Earth" onClick={this.handlePlanetClick} onMouseEnter={this.handleMouseEnter} className={scale ? 'planet Earth EarthScale' : 'planet Earth'} src={require('../images/Earth.png')}/></div>
                 <div className='one wide column'></div>
-                <div className='one wide column'><img alt="Mars" onClick={this.handlePlanetClick} onMouseEnter={this.handleMouseEnter} className={'planet Mars'} src={require('../images/Mars.png')}/></div>
+                <div className='one wide column'><img alt="Mars" onClick={this.handlePlanetClick} onMouseEnter={this.handleMouseEnter} className={scale ? 'planet Mars MarsScale' :'planet Mars'} src={require('../images/Mars.png')}/></div>
                 <div className='one wide column'></div>
-                <div className='one wide column'><img alt="Jupiter" onClick={this.handlePlanetClick} onMouseEnter={this.handleMouseEnter} className={'planet Jupiter'} src={require('../images/Jupiter.png')}/></div>
+                <div className='one wide column'><img alt="Jupiter" onClick={this.handlePlanetClick} onMouseEnter={this.handleMouseEnter} className={scale ? 'planet Jupiter JupiterScale' :'planet Jupiter'} src={require('../images/Jupiter.png')}/></div>
                 <div className='one wide column'></div>
-                <div className='one wide column'><img alt="Saturn" onClick={this.handlePlanetClick} onMouseEnter={this.handleMouseEnter} className={'planet Saturn'} src={require('../images/Saturn.png')}/></div>
+                <div className='one wide column'><img alt="Saturn" onClick={this.handlePlanetClick} onMouseEnter={this.handleMouseEnter} className={scale ? 'planet Saturn SaturnScale' :'planet Saturn'} src={require('../images/Saturn.png')}/></div>
                 <div className='one wide column'></div>
-                <div className='one wide column'><img alt="Uranus" onClick={this.handlePlanetClick} onMouseEnter={this.handleMouseEnter} className={'planet Uranus'} src={require('../images/Uranus.png')}/></div>
+                <div className='one wide column'><img alt="Uranus" onClick={this.handlePlanetClick} onMouseEnter={this.handleMouseEnter} className={scale ? 'planet Uranus UranusScale' :'planet Uranus'} src={require('../images/Uranus.png')}/></div>
                 <div className='one wide column'></div>
-                <div className='one wide column'><img alt="Neptune" onClick={this.handlePlanetClick} onMouseEnter={this.handleMouseEnter} className={'planet Neptune'} src={require('../images/Neptune.png')}/></div>
+                <div className='one wide column'><img alt="Neptune" onClick={this.handlePlanetClick} onMouseEnter={this.handleMouseEnter} className={scale ? 'planet Neptune NeptuneScale' :'planet Neptune'} src={require('../images/Neptune.png')}/></div>
 
 
               <div className="six wide column" />
-              <div className="four wide column">
+              <div className={scale ? "four wide column InfoScale" :"four wide column"}>
                 <div className="infoBox">
-                  <table id="infoTable">
+                  <table className="infoTable">
                     <tbody>
                       <tr>
                         <td>Name</td>
@@ -121,35 +127,35 @@ class SolarSystem extends Component {
                         <td>Diameter</td>
                         <td>
                           {this.state.planetInfo.diameter}
-                          km
+                          &nbsp;km
                         </td>
                       </tr>
                       <tr>
                         <td>Mass</td>
                         <td>
                           {this.state.planetInfo.mass}
-                          Earths
+                          &nbsp;Earths
                         </td>
                       </tr>
                       <tr>
                         <td>Length of Day</td>
                         <td>
                           {this.state.planetInfo.day_length}
-                          Hours
+                          &nbsp;Hours
                         </td>
                       </tr>
                       <tr>
                         <td>Gravity</td>
                         <td>
                           {this.state.planetInfo.gravity}
-                          m/s&#178;
+                          &nbsp;m/s&#178;
                         </td>
                       </tr>
                       <tr>
                         <td>Orbital Period</td>
                         <td>
                           {this.state.planetInfo.orbital_period}
-                          days
+                          &nbsp;days
                         </td>
                       </tr>
                       <tr>
@@ -158,14 +164,14 @@ class SolarSystem extends Component {
                           {this.state.planetInfo.atmosphere === -1
                             ? "N/A"
                             : this.state.planetInfo.atmosphere}
-                          atm(s)
+                          &nbsp;atm(s)
                         </td>
                       </tr>
                       <tr>
                         <td>Sun Distance</td>
                         <td>
                           {this.state.planetInfo.sun_distance}
-                          million km
+                          &nbsp;million km
                         </td>
                       </tr>
                       <tr>
@@ -238,11 +244,17 @@ class SolarSystem extends Component {
   planetMoons = () => {
     const selectedPlanet = this.props.planets.find(
       planet => planet.name === this.state.selectedPlanet
-    );
+    )
     return this.props.moons.filter(
       moon => moon.planet_id === selectedPlanet.id
-    );
-  };
+    )
+  }
+
+  scalePlanet = () => {
+    this.setState({
+      scale: !this.state.scale
+    })
+  }
 }
 
 export default SolarSystem;

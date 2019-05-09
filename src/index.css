@@ -116,6 +116,9 @@ body {
 #Venus{
   width: 28% !important;
 }
+#VenusInfo, #MercuryInfo{
+  width: 25%;
+}
 
 .Earth {
   margin-left: -95%;
@@ -170,4 +173,79 @@ body {
   flex-wrap: 'wrap';
   flex-direction: 'row';
   justify-content: 'center';
+}
+
+
+
+
+
+
+/* TO SCALE CSS BELOW */
+
+
+.MercuryScale {
+  height: 10px !important;
+  width: 10px !important;
+  margin-left: 63% !important;
+}
+
+.VenusScale {
+  height: 25px !important;
+  width: 25px !important;
+  margin-left: -260% !important;
+
+}
+
+.EarthScale {
+  height: 27px !important;
+  width: 27px !important;
+  margin-left: -530% !important;
+}
+
+.MarsScale {
+  height: 14px !important;
+  width: 14px !important;
+  margin-left: -829% !important;
+}
+
+.JupiterScale {
+  height: 300px !important;
+  width: 300px !important;
+  margin-left: -872% !important;
+
+}
+
+.SaturnScale {
+  height: 253px !important;
+  width: 689px !important;
+  margin-left: -477% !important;
+
+}
+
+.UranusScale {
+  height: 236px !important;
+  width: 107px !important;
+  margin-left: 17% !important;
+
+}
+
+.NeptuneScale {
+  height: 104px !important;
+  width: 104px !important;
+  margin-left: -100% !important;
+
+}
+
+.InfoScale {
+  margin-top: -158rem !important;
+}
+
+.SolarSystemScale {
+  margin-top: -92rem !important;
+}
+
+.SunScale {
+  height: 3000px !important;
+  width: 3000px !important;
+  margin-left: -182rem !important;
 }
