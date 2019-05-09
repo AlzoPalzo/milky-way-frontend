@@ -6,6 +6,7 @@ import NavBar from './NavBar'
 class Galaxy extends Component {
 
   state = {
+    searchTerm: "",
     showSolarSystem: false,
     showPlanet: false,
     planets: [],
@@ -32,6 +33,30 @@ class Galaxy extends Component {
     this.setState({showSolarSystem: false, showPlanet: false})
   }
 
+  
+  updateSearchTerm = (e) =>
+  {
+    const term = e.target.value.toLowerCase()
+    this.state.planets.find(planet => planet.name.toLowerCase() === term)
+    ? this.setState({
+      searchTerm: term + ' p'
+    }, this.goToSolarSystem)
+    : this.state.moons.find(moon => moon.name.toLowerCase() === term) 
+      ? this.setState({
+        searchTerm: term + ' m'
+      }, this.goToSolarSystem)
+      :this.setState({
+        searchTerm: ""
+      })
+  }
+
+  resetSearch = () =>
+  {
+    this.setState({
+      searchTerm: ""
+    })
+  }
+
   componentDidMount() {
     fetch("http://localhost:4000/planets").then(resp => resp.json()).then(planets => this.setState({planets: planets}));
     fetch("http://localhost:4000/moons").then(resp => resp.json()).then(moons => this.setState({moons: moons}));
@@ -41,11 +66,11 @@ class Galaxy extends Component {
   render() {
     const {showPlanet, planets, moons} = this.state
     return (<React.Fragment>
-      <NavBar returnToGalaxy={this.returnToGalaxy} goToSolarSystem={this.goToSolarSystem} goToPlanetView={this.goToPlanetView}/>
+      <NavBar updateSearchTerm={this.updateSearchTerm} returnToGalaxy={this.returnToGalaxy} goToSolarSystem={this.goToSolarSystem} goToPlanetView={this.goToPlanetView}/>
       <br/> {
         !this.state.showSolarSystem
           ? <img alt="Milky Way" id="MilkyWay" onClick={this.handleGalaxyClick} src={require('../images/galaxy2.png')}/>
-          : <SolarSystem showPlanet={showPlanet} goToPlanetView={this.goToPlanetView} returnToSolarSystem={this.returnToSolarSystem} planets={planets} moons={moons}/>
+          : <SolarSystem searchTerm={this.state.searchTerm} resetSearch={this.resetSearch} showPlanet={showPlanet} goToPlanetView={this.goToPlanetView} returnToSolarSystem={this.returnToSolarSystem} planets={planets} moons={moons}/>
       }
     </React.Fragment>);
   }
