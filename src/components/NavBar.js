@@ -15,7 +15,7 @@ class NavBar extends Component {
       <div className="four wide column" id="buttoon">
         <div className="ui category search">
           <div className="ui icon input">
-            <input className="prompt" id="search" type="text" placeholder="Search the Galaxy..."/>
+            <input className="prompt" id="search" onChange={this.props.updateSearchTerm} type="text" placeholder="Search the Galaxy..."/>
           </div>
         </div>
       </div>

@@ -2,20 +2,8 @@ import React, {Component} from 'react';
 
 class Moon extends Component {
 
-  state = {
-    showInfo: false
-  }
-
-  displayInfo = () => {
-    this.setState({showInfo: true})
-  }
-
-  hideInfo = () => {
-    this.setState({showInfo: false})
-  }
-
   render() {
-    return (<img className='moon-image' alt="moon" src={require(`../images/moons/${this.props.planet}/${this.props.moon.name.toLowerCase()}.png`)} onMouseEnter={this.displayInfo} onMouseLeave={this.hideInfo}/>)
+    return (<img className='moon-image' alt="moon" src={require(`../images/moons/${this.props.planet}/${this.props.moon.name.toLowerCase()}.png`)} onMouseEnter={() => this.props.changeMoon(this.props.moon)} onMouseLeave={this.props.resetStatBox}/>)
   }
 }
 
