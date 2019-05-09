@@ -106,9 +106,15 @@ body {
 .Mercury {
   margin-left: 43%;
 }
+#Mercury {
+  width: 29% !important;
+}
 
 .Venus {
   margin-left: -17%;
+}
+#Venus{
+  width: 28% !important;
 }
 
 .Earth {

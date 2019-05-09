@@ -14,11 +14,18 @@ class Planet extends Component {
     }
   }
 
+  size = () => {
+    if (this.props.selectedPlanet === 'Mercury' || this.props.selectedPlanet === 'Venus') {
+      return 'sixteen wide column'
+    } else {
+      return 'eight wide column'
+    }
+  }
+
   render() {
     const planetStyle = {
       width: '42%'
     }
-
 
     const {selectedPlanet, moons} = this.props
 
@@ -26,7 +33,8 @@ class Planet extends Component {
       <div className='sixteen wide column' id={selectedPlanet + 'Title'}>
         <h1 className="solarTitle">{selectedPlanet.charAt(0).toUpperCase() + selectedPlanet.slice(1)}</h1>
       </div>
-      <div className='eight wide column'>
+
+      <div className={this.size()}>
         <div className='row'>
           <img alt="Planet" id={selectedPlanet} style={planetStyle} src={require(`../images/${this.props.selectedPlanet}.png`)}/>
         </div>
@@ -44,18 +52,19 @@ class Planet extends Component {
                       {
                         moons.length > 0
                           ? <tr>
-                              <td>Number of moons:
+                              <td>Number of Moons:
                               </td>
                               <td>{moons.length}</td>
                             </tr>
                           : <tr>
-                              <td>This planet has no moons</td>
+                              <td>Number of Moons:</td>
+                              <td>This Planet has no Moons</td>
                             </tr>
                       }
                       {
                         moons.length > 0
                           ? <tr>
-                              <td>Average moon diameter:
+                              <td>Average Moon Diameter:
                               </td>
                               <td>{(moons.map(moon => moon.diameter).reduce((a, b) => a + b, 0) / moons.length).toFixed(2)}</td>
                             </tr>
@@ -71,7 +80,7 @@ class Planet extends Component {
       <div className='eight wide column moonBox'>
         {moons.map(moon => <Moon key={moon.id} moon={moon} planet={selectedPlanet}/>)}
       </div>
-    </div>);
+    </div>)
   }
 }
 
