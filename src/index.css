@@ -60,10 +60,10 @@ body {
   cursor: pointer;
 }
 
-#solarTitle {
+.solarTitle {
   color: white;
   font-size: 35px;
-  margin-top: 4rem;
+  margin-top: 2rem;
   margin-bottom: 0rem;
 }
 
@@ -78,7 +78,19 @@ body {
   padding-left:95px;
 }
 
-#infoTable {
+.pInfoBox {
+  color: white;
+  border: 3px solid white;
+  border-radius: 10px;
+  padding: 20px;
+  font-weight: bold;
+  background-color: #005aff38;
+  width:40%;
+  margin: auto;
+  margin-top: 2rem
+}
+
+.infoTable {
   text-align: left;
   width: 100%;
 }
@@ -110,6 +122,8 @@ body {
 .Jupiter {
   margin-left: -274%;
 }
+#Jupiter {
+}
 
 .Saturn {
   margin-left: -242%;
@@ -117,6 +131,7 @@ body {
 }
 #Saturn {
   width:100% !important;
+  margin-top: 3rem;
 }
 
 .Uranus {
@@ -124,7 +139,7 @@ body {
   height:320px;
 }
 #Uranus {
-  width:25% !important;
+  width:20% !important;
 }
 
 .Neptune{
@@ -136,4 +151,17 @@ body {
   height: 20%;
   max-height: 180px;
   padding: 15px;
+  max-width: 160px;
+}
+
+.moon-image:hover {
+  cursor: pointer;
+  opacity:0.8
+}
+
+.moonBox{
+  display: 'flex';
+  flex-wrap: 'wrap';
+  flex-direction: 'row';
+  justify-content: 'center';
 }

@@ -29,7 +29,7 @@ class SolarSystem extends Component {
 
           ? <Planet returnToSolarSystem={this.props.returnToSolarSystem} selectedPlanet={selectedPlanet} moons={this.planetMoons()}/>
           : <React.Fragment>
-              <h1 id="solarTitle">{this.state.viewPlanet}</h1>
+              <h1 className="solarTitle">{this.state.viewPlanet}</h1>
               <div className='solar-system ui middle aligned grid'>
                 <div className='one wide column'><img alt="The Sun" onMouseEnter={this.changePlanet} className={'The Sun'} src={require('../images/Sun.png')}/></div>
                 <div className='one wide column'><img alt="Mercury" onClick={this.handlePlanetClick} onMouseEnter={this.handleMouseEnter} className={'planet Mercury'} src={require('../images/Mercury.png')}/></div>
@@ -51,7 +51,7 @@ class SolarSystem extends Component {
                 <div className='six wide column'></div>
                 <div className='four wide column'>
                   <div className='infoBox'>
-                    <table id='infoTable'>
+                    <table className='infoTable'>
                       <tbody>
                         <tr>
                           <td>Name</td>
