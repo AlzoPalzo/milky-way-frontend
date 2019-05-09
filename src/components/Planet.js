@@ -21,7 +21,7 @@ class Planet extends Component {
     return (
     <div className='ui middle aligned grid'>
       <div className='sixteen wide column' id={selectedPlanet + 'Title'}>
-        <h1 id="solarTitle">{this.state.name}</h1>
+        <h1 className="solarTitle">{this.state.name}</h1>
       </div>
 
       <div className={this.size()}>
