@@ -72,6 +72,7 @@ class SolarSystem extends Component {
   render() {
     const { selectedPlanet } = this.state;
 
+
     return (
       <React.Fragment>
         {this.search()}
@@ -88,94 +89,24 @@ class SolarSystem extends Component {
         ) : (
           <React.Fragment>
             <h1 id="solarTitle">{this.state.viewPlanet}</h1>
-            <div className="solar-system ui middle aligned grid">
-              <div className="one wide column">
-                <img
-                  alt="The Sun"
-                  onMouseEnter={this.changePlanet}
-                  className={"The Sun"}
-                  src={require("../images/Sun.png")}
-                />
-              </div>
-              <div className="one wide column">
-                <img
-                  alt="Mercury"
-                  onClick={this.handlePlanetClick}
-                  onMouseEnter={this.handleMouseEnter}
-                  className={"planet Mercury"}
-                  src={require("../images/Mercury.png")}
-                />
-              </div>
-              <div className="one wide column" />
-              <div className="one wide column">
-                <img
-                  alt="Venus"
-                  onClick={this.handlePlanetClick}
-                  onMouseEnter={this.handleMouseEnter}
-                  className={"planet Venus"}
-                  src={require("../images/Venus.png")}
-                />
-              </div>
-              <div className="one wide column" />
-              <div className="one wide column">
-                <img
-                  alt="Earth"
-                  onClick={this.handlePlanetClick}
-                  onMouseEnter={this.handleMouseEnter}
-                  className={"planet Earth"}
-                  src={require("../images/Earth.png")}
-                />
-              </div>
-              <div className="one wide column" />
-              <div className="one wide column">
-                <img
-                  alt="Mars"
-                  onClick={this.handlePlanetClick}
-                  onMouseEnter={this.handleMouseEnter}
-                  className={"planet Mars"}
-                  src={require("../images/Mars.png")}
-                />
-              </div>
-              <div className="one wide column" />
-              <div className="one wide column">
-                <img
-                  alt="Jupiter"
-                  onClick={this.handlePlanetClick}
-                  onMouseEnter={this.handleMouseEnter}
-                  className={"planet Jupiter"}
-                  src={require("../images/Jupiter.png")}
-                />
-              </div>
-              <div className="one wide column" />
-              <div className="one wide column">
-                <img
-                  alt="Saturn"
-                  onClick={this.handlePlanetClick}
-                  onMouseEnter={this.handleMouseEnter}
-                  className={"planet Saturn"}
-                  src={require("../images/Saturn.png")}
-                />
-              </div>
-              <div className="one wide column" />
-              <div className="one wide column">
-                <img
-                  alt="Uranus"
-                  onClick={this.handlePlanetClick}
-                  onMouseEnter={this.handleMouseEnter}
-                  className={"planet Uranus"}
-                  src={require("../images/Uranus.png")}
-                />
-              </div>
-              <div className="one wide column" />
-              <div className="one wide column">
-                <img
-                  alt="Neptune"
-                  onClick={this.handlePlanetClick}
-                  onMouseEnter={this.handleMouseEnter}
-                  className={"planet Neptune"}
-                  src={require("../images/Neptune.png")}
-                />
-              </div>
+             <div className='solar-system ui middle aligned grid'>
+                <div className='one wide column'><img alt="The Sun" onMouseEnter={this.changePlanet} className={'The Sun'} src={require('../images/Sun.png')}/></div>
+                <div className='one wide column'><img alt="Mercury" onClick={this.handlePlanetClick} onMouseEnter={this.handleMouseEnter} className={'planet Mercury'} src={require('../images/Mercury.png')}/></div>
+                <div className='one wide column'></div>
+                <div className='one wide column'><img alt="Venus" onClick={this.handlePlanetClick} onMouseEnter={this.handleMouseEnter} className={'planet Venus'} src={require('../images/Venus.png')}/></div>
+                <div className='one wide column'></div>
+                <div className='one wide column'><img alt="Earth" onClick={this.handlePlanetClick} onMouseEnter={this.handleMouseEnter} className={'planet Earth'} src={require('../images/Earth.png')}/></div>
+                <div className='one wide column'></div>
+                <div className='one wide column'><img alt="Mars" onClick={this.handlePlanetClick} onMouseEnter={this.handleMouseEnter} className={'planet Mars'} src={require('../images/Mars.png')}/></div>
+                <div className='one wide column'></div>
+                <div className='one wide column'><img alt="Jupiter" onClick={this.handlePlanetClick} onMouseEnter={this.handleMouseEnter} className={'planet Jupiter'} src={require('../images/Jupiter.png')}/></div>
+                <div className='one wide column'></div>
+                <div className='one wide column'><img alt="Saturn" onClick={this.handlePlanetClick} onMouseEnter={this.handleMouseEnter} className={'planet Saturn'} src={require('../images/Saturn.png')}/></div>
+                <div className='one wide column'></div>
+                <div className='one wide column'><img alt="Uranus" onClick={this.handlePlanetClick} onMouseEnter={this.handleMouseEnter} className={'planet Uranus'} src={require('../images/Uranus.png')}/></div>
+                <div className='one wide column'></div>
+                <div className='one wide column'><img alt="Neptune" onClick={this.handlePlanetClick} onMouseEnter={this.handleMouseEnter} className={'planet Neptune'} src={require('../images/Neptune.png')}/></div>
+
 
               <div className="six wide column" />
               <div className="four wide column">

@@ -4,6 +4,7 @@ import Moon from './Moon'
 
 class Planet extends Component {
 
+  
   state = {
       name: this.props.selectedPlanet,
       distance: 0,
@@ -13,33 +14,25 @@ class Planet extends Component {
 
   render() {
     const planetStyle = {
-      width: '50%'
-    }
-    const flexBox = {
-      display: 'flex',
-      flexWrap: 'wrap',
-      flexDirection: 'row',
-      justifyContent: 'center'
-    }
-    const paddingLeft = {
-      paddingLeft: '20px'
-    }
-    const paddingFifty = {
-      padding: '50px'
+      width: '42%'
     }
 
     const {selectedPlanet, moons} = this.props
 
+
     return (
     <div className='ui middle aligned grid'>
-      <div className='sixteen wide column'>
+      <div className='sixteen wide column' id={selectedPlanet + 'Title'}>
         <h1 id="solarTitle">{this.state.name}</h1>
       </div>
-      <div className='six wide column'>
+
+      <div className={this.size()}>
+        <div className='row'>
         <img alt="Planet" id={selectedPlanet} style={planetStyle} src={require(`../images/${this.props.selectedPlanet}.png`)}/>
       </div>
-      <div className='four wide column' style={paddingFifty}>
-        <div className='infoBox' style={paddingLeft}>
+       <div className='row'>
+
+       <div className='pInfoBox' id={selectedPlanet + 'Info'}>
           {this.state.distance === 0
             ? <table id='infoTable'>
                 {
@@ -83,15 +76,20 @@ class Planet extends Component {
                   </tr>
                 </tbody>
               </table>
+            <div />
           }
         </div>
       </div>
       <div className='six wide column'>
         <div style={flexBox}>
           {moons.map(moon => <Moon key={moon.id} moon={moon} changeMoon={this.changeMoon} planet={selectedPlanet} resetStatBox={this.resetStatBox}/>)}
-        </div>
+
       </div>
-    </div>);
+      </div>
+      <div className='eight wide column moonBox'>
+        {moons.map(moon => <Moon key={moon.id} moon={moon} planet={selectedPlanet}/>)}
+      </div>
+    </div>)
   }
 
   changeMoon = (moon) =>
@@ -117,6 +115,13 @@ class Planet extends Component {
       this.props.resetMoon()
     }
   }
+
+  size = () => {
+    if (this.props.selectedPlanet === 'Mercury' || this.props.selectedPlanet === 'Venus') {
+      return 'sixteen wide column'
+    } else {
+      return 'eight wide column'
+   }
 
   resetStatBox = () =>
   this.setState({
