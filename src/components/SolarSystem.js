@@ -91,10 +91,10 @@ class SolarSystem extends Component {
         ) : (
           <React.Fragment>
 
-            <div class="ui buttons">
-              <button class="ui button colour1" onClick={() => this.scalePlanet(true)}>To Scale</button>
-              <div class="or"></div>
-              <button class="ui button colour2" onClick={() => this.scalePlanet(false)}>Relative</button>
+            <div className="ui buttons">
+              <button className="ui button colour1" onClick={() => this.scalePlanet(true)}>To Scale</button>
+              <div className="or"></div>
+              <button className="ui button colour2" onClick={() => this.scalePlanet(false)}>Relative</button>
             </div>
 
             <h1 className="solarTitle">{this.state.viewPlanet}</h1>

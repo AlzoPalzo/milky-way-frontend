@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 class Moon extends Component {
 
   render() {
-    return (<img className='moon-image' alt="moon" src={require(`../images/moons/${this.props.planet}/${this.props.moon.name.toLowerCase()}.png`)} onMouseEnter={() => this.props.changeMoon(this.props.moon)} onMouseLeave={this.props.resetStatBox}/>)
+    return (<img className='moon-image' id={this.props.moon.name} alt="moon" src={require(`../images/moons/${this.props.planet}/${this.props.moon.name.toLowerCase()}.png`)} onMouseEnter={() => this.props.changeMoon(this.props.moon)} onMouseLeave={this.props.resetStatBox}/>)
   }
 }
 

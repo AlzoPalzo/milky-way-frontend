@@ -17,7 +17,6 @@ body {
   margin: 0px;
   background-color: transparent;
   text-align: center;
-
   height: 100px;
 }
 
@@ -46,7 +45,7 @@ body {
 }
 
 .Sun {
-  width:700px;
+  width: 700px;
   margin-left: -500px;
 }
 
@@ -63,7 +62,7 @@ body {
 .solarTitle {
   color: white;
   font-size: 35px;
-  margin-top: 2rem;
+  margin-top: 5rem;
   margin-bottom: 0rem;
 }
 
@@ -75,7 +74,7 @@ body {
   padding: 20px;
   font-weight: bold;
   background-color: #005aff38;
-  padding-left:95px;
+  padding-left: 95px;
 }
 
 .pInfoBox {
@@ -85,7 +84,7 @@ body {
   padding: 20px;
   font-weight: bold;
   background-color: #005aff38;
-  width:40%;
+  width: 40%;
   margin: auto;
   margin-top: 2rem
 }
@@ -106,17 +105,20 @@ body {
 .Mercury {
   margin-left: 43%;
 }
+
 #Mercury {
-  width: 29% !important;
+  width: 26% !important;
 }
 
 .Venus {
   margin-left: -17%;
 }
-#Venus{
+
+#Venus {
   width: 28% !important;
 }
-#VenusInfo, #MercuryInfo{
+
+#VenusInfo, #MercuryInfo {
   width: 25%;
 }
 
@@ -131,58 +133,53 @@ body {
 .Jupiter {
   margin-left: -274%;
 }
-#Jupiter {
-}
+
+#Jupiter {}
 
 .Saturn {
   margin-left: -242%;
-  width:400px;
+  width: 400px;
 }
+
 #Saturn {
-  width:100% !important;
+  width: 100% !important;
   margin-top: 3rem;
 }
 
 .Uranus {
   margin-left: -42%;
-  height:320px;
-}
-#Uranus {
-  width:20% !important;
+  height: 320px;
 }
 
-.Neptune{
+#Uranus {
+  width: 20% !important;
+}
+
+.Neptune {
   margin-left: -100%;
 }
 
 .moon-image {
   width: 20%;
   height: 20%;
-  max-height: 180px;
+  height: 140px;
   padding: 15px;
-  max-width: 160px;
+  width: 140px;
 }
 
 .moon-image:hover {
   cursor: pointer;
-  opacity:0.8
+  opacity: 0.8
 }
 
-.moonBox{
+.moonBox {
   display: 'flex';
   flex-wrap: 'wrap';
   flex-direction: 'row';
   justify-content: 'center';
 }
 
-
-
-
-
-
 /* TO SCALE CSS BELOW */
-
-
 .MercuryScale {
   height: 10px !important;
   width: 10px !important;
@@ -193,7 +190,6 @@ body {
   height: 25px !important;
   width: 25px !important;
   margin-left: -260% !important;
-
 }
 
 .EarthScale {
@@ -212,28 +208,24 @@ body {
   height: 300px !important;
   width: 300px !important;
   margin-left: -872% !important;
-
 }
 
 .SaturnScale {
   height: 253px !important;
   width: 689px !important;
   margin-left: -477% !important;
-
 }
 
 .UranusScale {
   height: 236px !important;
   width: 107px !important;
   margin-left: 17% !important;
-
 }
 
 .NeptuneScale {
   height: 104px !important;
   width: 104px !important;
   margin-left: -100% !important;
-
 }
 
 .InfoScale {
@@ -251,22 +243,29 @@ body {
 }
 
 #scaleLabel {
-  color:white !important;
-
+  color: white !important;
 }
+
 #scaleLabel {
-    color: white !important;
+  color: white !important;
 }
 
 .colour1 {
   background-color: #0059a9cf !important;
-  color:white !important;
+  color: white !important;
 }
+
 .colour2 {
   background-color: #c3067fab !important;
-  color:white !important;
+  color: white !important;
 }
 
 .colour1:hover, .colour2:hover {
-  opacity:0.7 !important;
+  opacity: 0.7 !important;
+}
+
+#Moon, #Deimos, #Phobos {
+  width: 300px;
+  height: 300px;
+  margin-bottom: 12rem;
 }

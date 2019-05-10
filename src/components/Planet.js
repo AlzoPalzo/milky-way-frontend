@@ -8,7 +8,8 @@ class Planet extends Component {
     name: this.props.selectedPlanet,
     distance: 0,
     orbital_period: 0,
-    diameter: 0
+    diameter: 0,
+    sort_size: true
   }
 
   render() {
@@ -17,10 +18,24 @@ class Planet extends Component {
     }
 
     const {selectedPlanet, moons} = this.props
+    const moonsByDistance = [...moons].sort((a, b) => a.distance - b.distance)
+    const moonsBySize = [...moons].sort(
+      (a, b) => a.diameter > b.diameter
+      ? -1
+      : 1)
+    // debugger
 
-    return (
-    <div className='ui middle aligned grid'>
+    return (<div className='ui middle aligned grid'>
       <div className='sixteen wide column' id={selectedPlanet + 'Title'}>
+        {
+          this.props.selectedPlanet === 'Mercury' || this.props.selectedPlanet === 'Venus'
+            ? null
+            : <div className="ui buttons">
+                <button className="ui button colour1" onClick={() => this.sortBy(true)}>Sort by Distance</button>
+                <div className="or"></div>
+                <button className="ui button colour2" onClick={() => this.sortBy(false)}>Sort by Size</button>
+              </div>
+        }
         <h1 className="solarTitle">{this.state.name}</h1>
       </div>
 
@@ -62,14 +77,16 @@ class Planet extends Component {
                             </tr>
                           </tbody>
                         : <tbody>
+                          <tr>
                             <td>Name
                             </td>
-                            <td>{selectedPlanet}</td>
-                            <tr>
-                              <td>Number of Notable Moons</td>
-                              <td>This Planet has no Moons</td>
-                            </tr>
-                          </tbody>
+                          <td>{selectedPlanet}</td>
+                        </tr>
+                          <tr>
+                            <td>Number of Notable Moons</td>
+                            <td>This Planet has no Moons</td>
+                          </tr>
+                        </tbody>
                     }
                   </table>
                 : <table className='infoTable'>
@@ -97,36 +114,47 @@ class Planet extends Component {
                   </table>
             }
           </div>
-          </div>
         </div>
-
-        <div className='six wide column'>
-          <div className='moonBox'>
-            {moons.map(moon => <Moon key={moon.id} moon={moon} changeMoon={this.changeMoon} planet={selectedPlanet} resetStatBox={this.resetStatBox}/>)}
-          </div>
-        </div>
-
       </div>
-    )
+
+      <div className='six wide column'>
+        <div className='moonBox'>
+          {
+            this.state.sort_size
+              ? moonsBySize.map(moon => <Moon key={moon.id} moon={moon} changeMoon={this.changeMoon} planet={selectedPlanet} resetStatBox={this.resetStatBox}/>)
+              : moonsByDistance.map(moon => <Moon key={moon.id} moon={moon} changeMoon={this.changeMoon} planet={selectedPlanet} resetStatBox={this.resetStatBox}/>)
+          }
+        </div>
+      </div>
+
+    </div>)
   }
 
-      changeMoon = (moon) => {this.setState({name: moon.name, distance: moon.distance, orbital_period: moon.orbital_period, diameter: moon.diameter})}
+  changeMoon = (moon) => {
+    this.setState({name: moon.name, distance: moon.distance, orbital_period: moon.orbital_period, diameter: moon.diameter})
+  }
 
-      componentDidMount() {
-        if (this.props.moon.name) {
-          this.setState({name: this.props.moon.name, distance: this.props.moon.distance, orbital_period: this.props.moon.orbital_period, diameter: this.props.moon.diameter});
-          this.props.resetMoon()
-        }
-      }
+  componentDidMount() {
+    if (this.props.moon.name) {
+      this.setState({name: this.props.moon.name, distance: this.props.moon.distance, orbital_period: this.props.moon.orbital_period, diameter: this.props.moon.diameter});
+      this.props.resetMoon()
+    }
+  }
 
-      size = () => {
-        if (this.props.selectedPlanet === 'Mercury' || this.props.selectedPlanet === 'Venus') {
-          return 'sixteen wide column'
-        } else {
-          return 'eight wide column'
-        }
-      }
+  size = () => {
+    if (this.props.selectedPlanet === 'Mercury' || this.props.selectedPlanet === 'Venus') {
+      return 'sixteen wide column'
+    } else {
+      return 'eight wide column'
+    }
+  }
 
-      resetStatBox = () => this.setState({name: this.props.selectedPlanet, distance: 0, orbital_period: 0, diameter: 0})
+  resetStatBox = () => this.setState({name: this.props.selectedPlanet, distance: 0, orbital_period: 0, diameter: 0})
+
+  sortBy = (arg) => {
+    arg
+      ? this.setState({sort_size: false})
+      : this.setState({sort_size: true})
+  }
 }
-      export default Planet;
+export default Planet;
