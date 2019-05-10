@@ -76,10 +76,6 @@ class SolarSystem extends Component {
 
     return (
       <React.Fragment>
-        <div className="ui toggle checkbox">
-          <input type="checkbox" name="public" onChange={this.scalePlanet} />
-          <label>SCALE UP MUFUKKA</label>
-        </div>
 
         {this.search()}
         {this.props.showPlanet ? (
@@ -94,6 +90,12 @@ class SolarSystem extends Component {
           />
         ) : (
           <React.Fragment>
+
+            <div className="ui toggle checkbox">
+              <input type="checkbox" name="public" onChange={this.scalePlanet} />
+              <label>SCALE UP MUFUKKA</label>
+            </div>
+            
             <h1 className="solarTitle">{this.state.viewPlanet}</h1>
              <div className= {scale ? 'solar-system ui middle aligned grid SolarSystemScale' : 'solar-system ui middle aligned grid'}>
                 <div className='one wide column'><img alt="The Sun" onMouseEnter={this.changePlanet} className={scale ? 'The Sun SunScale' : 'The Sun'} src={require('../images/Sun.png')}/></div>
