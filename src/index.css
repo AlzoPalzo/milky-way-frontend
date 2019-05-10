@@ -249,3 +249,24 @@ body {
   width: 3000px !important;
   margin-left: -182rem !important;
 }
+
+#scaleLabel {
+  color:white !important;
+
+}
+#scaleLabel {
+    color: white !important;
+}
+
+.colour1 {
+  background-color: #0059a9cf !important;
+  color:white !important;
+}
+.colour2 {
+  background-color: #c3067fab !important;
+  color:white !important;
+}
+
+.colour1:hover, .colour2:hover {
+  opacity:0.7 !important;
+}

@@ -91,11 +91,12 @@ class SolarSystem extends Component {
         ) : (
           <React.Fragment>
 
-            <div className="ui toggle checkbox">
-              <input type="checkbox" name="public" onChange={this.scalePlanet} />
-              <label>SCALE UP MUFUKKA</label>
+            <div class="ui buttons">
+              <button class="ui button colour1" onClick={() => this.scalePlanet(true)}>To Scale</button>
+              <div class="or"></div>
+              <button class="ui button colour2" onClick={() => this.scalePlanet(false)}>Relative</button>
             </div>
-            
+
             <h1 className="solarTitle">{this.state.viewPlanet}</h1>
              <div className= {scale ? 'solar-system ui middle aligned grid SolarSystemScale' : 'solar-system ui middle aligned grid'}>
                 <div className='one wide column'><img alt="The Sun" onMouseEnter={this.changePlanet} className={scale ? 'The Sun SunScale' : 'The Sun'} src={require('../images/Sun.png')}/></div>
@@ -252,10 +253,8 @@ class SolarSystem extends Component {
     )
   }
 
-  scalePlanet = () => {
-    this.setState({
-      scale: !this.state.scale
-    })
+  scalePlanet = (arg) => {
+    arg ? this.setState({scale: true}) : this.setState({scale: false})
   }
 }
 
