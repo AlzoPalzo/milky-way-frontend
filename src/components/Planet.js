@@ -33,69 +33,65 @@ class Planet extends Component {
           <div className='pInfoBox' id={selectedPlanet + 'Info'}>
             {
               this.state.distance === 0
-                ? <table id='infoTable'>
+                ? <table className='infoTable'>
                     {
                       moons.length > 0
                         ? <tbody>
                             <tr>
-                              <td>Name:
-                              </td>
-                              <td>{selectedPlanet}</td>
-                            </tr>
-                            <tr>
-                              <td>Number of moons:
+                              <td>Number of Notable Moons
                               </td>
                               <td>{moons.length}</td>
                             </tr>
                             <tr>
-                              <td>Average distance from moon:
+                              <td>Average Distance from Moon
                               </td>
-                              <td>{(moons.map(moon => moon.distance).reduce((a, b) => a + b, 0) / moons.length).toFixed(1)}
-                                km</td>
+                              <td>{(moons.map(moon => moon.distance).reduce((a, b) => a + b, 0) / moons.length).toFixed(0)}
+                                &nbsp;km</td>
                             </tr>
                             <tr>
-                              <td>Average moon diameter:
+                              <td>Average Moon Diameter
                               </td>
-                              <td>{(moons.map(moon => moon.diameter).reduce((a, b) => a + b, 0) / moons.length).toFixed(1)}
-                                km</td>
+                              <td>{(moons.map(moon => moon.diameter).reduce((a, b) => a + b, 0) / moons.length).toFixed(0)}
+                                &nbsp;km</td>
                             </tr>
                             <tr>
-                              <td>Average orbital period:
+                              <td>Average Orbital Period
                               </td>
                               <td>{(moons.map(moon => moon.orbital_period).reduce((a, b) => a + b, 0) / moons.length).toFixed(1)}
-                                days</td>
+                                &nbsp;days</td>
                             </tr>
                           </tbody>
                         : <tbody>
-                            <td>Name:
+                            <td>Name
                             </td>
                             <td>{selectedPlanet}</td>
                             <tr>
-                              <td>This planet has no moons</td>
+                              <td>Number of Notable Moons</td>
+                              <td>This Planet has no Moons</td>
                             </tr>
                           </tbody>
                     }
                   </table>
-                : <table id='infoTable'>
+                : <table className='infoTable'>
                     <tbody>
                       <tr>
-                        <td>Name:</td>
+                        <td>Name</td>
                         <td>{this.state.name}</td>
                       </tr>
                       <tr>
-                        <td>Distance:
+                        <td>Distance
                         </td>
-                        <td>{this.state.distance}</td>
+                        <td>{this.state.distance}&nbsp;km</td>
                       </tr>
                       <tr>
-                        <td>Diameter:
+                        <td>Diameter
                         </td>
-                        <td>{this.state.diameter}</td>
+                        <td>{this.state.diameter}&nbsp;km</td>
                       </tr>
                       <tr>
-                        <td>Orbital Period:
+                        <td>Orbital Period
                         </td>
-                        <td>{this.state.orbital_period}</td>
+                        <td>{this.state.orbital_period}&nbsp;days</td>
                       </tr>
                     </tbody>
                   </table>
