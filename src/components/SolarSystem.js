@@ -34,7 +34,7 @@ class SolarSystem extends Component {
       if (searchType === "p") {
         const planetName = searchTerm.split(" ")[0];
         const planet = this.props.planets.find(
-          planet => (planet.name = planetName)
+          planet => (planet.name.toLowerCase() === planetName.toLowerCase())
         );
         this.setState({
           selectedPlanet:
@@ -219,7 +219,6 @@ class SolarSystem extends Component {
     const info = this.props.planets.find(
       planet => planet.name === e.target.className.split(" ")[1]
     );
-    debugger
 
     this.setState({
       planetInfo: {
