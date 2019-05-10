@@ -219,6 +219,7 @@ class SolarSystem extends Component {
     const info = this.props.planets.find(
       planet => planet.name === e.target.className.split(" ")[1]
     );
+    debugger
 
     this.setState({
       planetInfo: {
