@@ -1,4 +1,8 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Galaxy Exlporer.
+
+### An interactive web app where you can explore our solar system. Learn about the planets and thier position and size. You can also learn about each planets major moons.
+
+Please note this is app requires a server for planetary and moon information. This can be downloaded <a href="https://github.com/Faizerz/milky-way-backend">here<a/>
 
 ## Available Scripts
 
